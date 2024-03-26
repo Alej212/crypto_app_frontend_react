@@ -1,0 +1,18 @@
+@keyframes color-cycle {
+    0% { filter: drop-shadow(2px 2px 100px hsl(168, 84%, 60%)) }
+    50% { filter: drop-shadow(2px 2px 100px hsl(229, 93%, 75%)) }
+    100% { filter: drop-shadow(2px 2px 100px hsl(168, 84%, 60%)) }
+}
+@keyframes color-cycle2 {
+    0% { filter: drop-shadow(2px 2px 30px hsl(168, 84%, 50%, 0.5)) }
+    50% { filter: drop-shadow(2px 2px 30px hsl(229, 93%, 75%, 0.5)) }
+    100% { filter: drop-shadow(2px 2px 30px hsl(168, 84%, 50%, 0.5)) }
+}
+
+.svg {
+    animation: color-cycle 10s infinite;
+}
+
+.svg2 {
+    animation: color-cycle2 10s infinite;
+}
