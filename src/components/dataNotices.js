@@ -1,4 +1,5 @@
 import axios from "axios";
+import localData from "./dataNotices.json"
 
 const data = async () => {
     const options = {
@@ -12,10 +13,10 @@ const data = async () => {
 
     try {
         const response = await axios.request(options);
-        console.log(response.data);
         return response.data
     } catch (error) {
-        console.error(error);
+        //console.log(`hubo este error - ${error}`);
+        return localData
     }
 }
 

@@ -1,7 +1,6 @@
 import { Card, ProgressBar } from '@tremor/react';
 import { Icon } from '@iconify/react';
-//import dataExchanges from './dataExchanges'
-import dataExhangeJSON from './dataExchange.json'
+import dataExchanges from './dataExchanges'
 import { useEffect, useState } from 'react';
 
 export default function Exchanges() {
@@ -10,9 +9,9 @@ export default function Exchanges() {
 
   useEffect(() => {
     const fetchData = async () => {
-      // const result = await dataExchanges()
-      const maxTradeVolume = Math.max(...dataExhangeJSON.map(exchange => exchange.trade_volume_24h_btc));
-      const exchangesWithPercentage = dataExhangeJSON.map(exchange => ({
+      const result = await dataExchanges()
+      const maxTradeVolume = Math.max(...result.map(exchange => exchange.trade_volume_24h_btc));
+      const exchangesWithPercentage = result.map(exchange => ({
         ...exchange,
         trade_volume_percentage: (exchange.trade_volume_24h_btc / maxTradeVolume) * 100,
       }));
@@ -25,7 +24,7 @@ export default function Exchanges() {
   return (
     <section id='exchanges'>
         <h3 className='text-center text-teal-500 font-black uppercase text-4xl mt-10 mb-20'>Exchanges</h3>
-        <div className='grid grid-cols-4 gap-6'>
+        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6'>
           {exchanges.map((exchange) => (
             <Card key={exchange.id} className='text-indigo-200 flex flex-col items-center relative'>
               <h3 className='text-teal-200 font-bold text-xl mb-3'>{exchange.name}</h3>

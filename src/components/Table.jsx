@@ -35,7 +35,7 @@ export default function TableCoins() {
     <div id='popular' className="w-full">
       <Card className='mt-20'>
       <h3 className="text-tremor-content-strong dark:text-dark-tremor-content-strong font-semibold text-3xl text-center mt-10 mb-16">List of the most popular Cryptocurrencies</h3>
-      <form onSubmit={handleSubmit} className='flex gap-5 items-end'>
+      <form onSubmit={handleSubmit} className='flex gap-5 flex-wrap items-end'>
           <label className='flex flex-col gap-2 text-indigo-50 font-medium'>
             Number of Cryptocurrencies :
             <TextInput type="number" placeholder='100 Max' name="numCripto" min="1" max="100" />

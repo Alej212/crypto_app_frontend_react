@@ -1,3 +1,5 @@
+import localData from './dataExchange.json'
+
 const data = async () => {
     const url = `${import.meta.env.VITE_URL3}`;
     const options = {
@@ -11,10 +13,9 @@ const data = async () => {
     try {
         const response = await fetch(url, options)
         const result = await response.json()
-        console.log(result)
         return result
     } catch (e) {
-        console.error(e)
+        return localData
     } 
 }
 

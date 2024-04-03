@@ -11,7 +11,7 @@ export default function App() {
   return (
     <>
     <Header/>
-    <div className="flex flex-col gap-20 p-28 mt-10 w-full">
+    <div className="flex flex-col gap-20 px-16 mt-36 mb-20 w-full">
       <WelcomeTop />
       <TableCoins />
       <Chart />

@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react'
-//import data from './dataNotices'
-import dataJSON from './dataNotices.json'
+import data from './dataNotices'
 import { Card } from '@tremor/react';
 
 
@@ -10,23 +9,12 @@ export default function Notices() {
 
     useEffect(() => {
         const fetchData = async () => {
-            // let result;
-            // try {
-            //     // Intenta ejecutar este código
-            //     const result = await data();
-            //     setNotices(result.data.slice(0, limit));
-            // } catch (error) {
-            //     // Si hay un error en el bloque try, se ejecuta este código
-            //     console.error(error);
-            //     if (dataJSON) {
-            //         // Si dataJSON existe, entonces usa dataJSON
-            //         setNotices(dataJSON.data.slice(0, limit));
-            //     } else {
-            //         // Si dataJSON no existe, entonces maneja la situación como desees
-            //         console.log('No hay datos de respaldo disponibles');
-            //     }
-            // }
-            return setNotices(dataJSON.data.slice(0, limit))
+            try {
+                const result = await data();
+                setNotices(result.data.slice(0, limit));
+            } catch (e) {
+                console.log('No hay datos de respaldo disponibles');
+            }
         }
         fetchData()
     }, [])
@@ -34,7 +22,7 @@ export default function Notices() {
   return (
     <section id='news'>
         <h3 className='text-center text-4xl font-black uppercase mb-20 mt-10 text-teal-500'>Notices</h3>
-        <div className='grid grid-cols-3 gap-5'>
+        <div className='grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5'>
             {notices.map((notice) => (
                 <Card key={notice.title} className="flex flex-col gap-6 ">
                     <h3 className="text-center text-indigo-300 font-bold text-xl">{notice.title}</h3>

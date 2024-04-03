@@ -38,7 +38,7 @@ export default function Chart() {
             <h3 className="text-indigo-200 text-xl font-medium mb-3">Price {date}</h3>
             <p className="font-semibold text-4xl text-indigo-50">$ {ultimoPrecio}</p>
           </div>
-        <form action="" className='flex items-end justify-center gap-10 text-white'>
+        <form action="" className='flex items-end flex-wrap justify-center gap-10 text-white'>
           <label htmlFor="" className='font-medium'>Date<br />
             <select value={date} className='bg-slate-800 border-spacing-1 border-indigo-700 rounded-lg mt-2' onChange={(e) => setDate(e.target.value)}>
               <option value="3h">3 hours</option>
