@@ -21,7 +21,7 @@ export default function Notices() {
 
   return (
     <section id='news'>
-        <h3 className='text-center text-4xl font-black uppercase mb-20 mt-10 text-teal-500'>Notices</h3>
+        <h3 className='text-center text-4xl font-black uppercase mb-20 mt-10 text-teal-500'>Notices from wold Crypto</h3>
         <div className='grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5'>
             {notices.map((notice) => (
                 <Card key={notice.title} className="flex flex-col gap-6 ">
